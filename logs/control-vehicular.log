@@ -32,3 +32,76 @@
 2025-11-18 14:28:48 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
 2025-11-18 14:28:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
 2025-11-18 14:28:49 [main] INFO  c.c.c.ControlVehicularApplication - Started ControlVehicularApplication in 34.444 seconds (process running for 35.318)
+2025-11-18 14:29:51 [http-nio-0.0.0.0-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-18 14:29:51 [http-nio-0.0.0.0-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-18 14:29:51 [http-nio-0.0.0.0-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-11-18 14:29:51 [http-nio-0.0.0.0-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/auth/login
+2025-11-18 14:29:51 [http-nio-0.0.0.0-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/login
+2025-11-18 14:29:51 [http-nio-0.0.0.0-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-11-18 14:29:51 [http-nio-0.0.0.0-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/login
+2025-11-18 14:29:52 [http-nio-0.0.0.0-8080-exec-1] INFO  c.c.c.controller.AuthController - Intento de login para usuario: guarda1
+2025-11-18 14:29:52 [http-nio-0.0.0.0-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.activo,
+        u1_0.bloqueado,
+        u1_0.documento,
+        u1_0.email,
+        u1_0.fecha_actualizacion,
+        u1_0.fecha_creacion,
+        u1_0.intentos_fallidos,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.telefono,
+        u1_0.ultimo_acceso,
+        u1_0.username 
+    from
+        usuario u1_0 
+    where
+        u1_0.username=?
+2025-11-18 14:29:53 [http-nio-0.0.0.0-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.usuario_id,
+        r1_0.rol 
+    from
+        usuario_roles r1_0 
+    where
+        r1_0.usuario_id=?
+2025-11-18 14:29:53 [http-nio-0.0.0.0-8080-exec-1] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-11-18 14:29:53 [http-nio-0.0.0.0-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.activo,
+        u1_0.bloqueado,
+        u1_0.documento,
+        u1_0.email,
+        u1_0.fecha_actualizacion,
+        u1_0.fecha_creacion,
+        u1_0.intentos_fallidos,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.telefono,
+        u1_0.ultimo_acceso,
+        u1_0.username 
+    from
+        usuario u1_0 
+    where
+        u1_0.username=?
+2025-11-18 14:29:54 [http-nio-0.0.0.0-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.conjunto.control_vehicular.entity.Usuario */update usuario 
+    set
+        activo=?,
+        bloqueado=?,
+        documento=?,
+        email=?,
+        fecha_actualizacion=?,
+        intentos_fallidos=?,
+        nombre_completo=?,
+        password=?,
+        telefono=?,
+        ultimo_acceso=?,
+        username=? 
+    where
+        id=?
+2025-11-18 14:29:54 [http-nio-0.0.0.0-8080-exec-1] INFO  c.c.c.controller.AuthController - Login exitoso para usuario: guarda1
